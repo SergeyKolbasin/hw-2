@@ -32,6 +32,6 @@
 </head>
 <body>
     <h4><?= $h4 ?></h4>
-    <span><?php echo "Число $value в степени $power = $result <br>" ?> </span>
+    <span><?= "Число $value в степени $power = $result <br>" ?> </span>
 </body>
 </html>
