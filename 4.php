@@ -21,40 +21,6 @@
     // аргументы для выполнения математических операций
     $arg1 = 12;
     $arg2 = 5;
-/*
-    // Функция сложения
-    function addFunction($arg1 = 0, $arg2 = 0):string
-    {
-        return (string)($arg1 + $arg2);
-    }
-
-    // Функция вычитания
-    function subFunction($arg1 = 0, $arg2 = 0):string
-    {
-        return (string)($arg1 - $arg2);
-    }
-
-    // Функция умножения
-    function mulFunction($arg1 = 0, $arg2 = 0):string
-    {
-        return (string)($arg1 * $arg2);
-    }
-
-    // Функция деления
-    function divFunction($arg1 = 0, $arg2 = 1):string
-    {
-        if ($arg2 == 0) {
-            return 'Ошибка, на 0 делить нельзя!';
-        }
-        return (string)($arg1 / $arg2);
-    }
-*/
-    /* Функция, выполняющая четыре математические операции: +, -, * и /
-    * $arg1         -   первый операнд
-    * $arg2         -   второй операнд
-    * $operation    -   математическая операция
-    * return        -   результат математической операции типа string
-    */
     // Функция математических операций
     function mathOperation(
         $arg1 = 0,
