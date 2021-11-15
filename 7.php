@@ -7,47 +7,31 @@
     $h4 = 'Системное время:';
     $strTime = '';              // время в правильном склонении
 
-    //Функция определения правильного склонения русского языка для часов
-    //Исходя из постановки задачи гарантированно корректно обрабатывает интервал от 0 до 24 часов
-    function decHour($hour = 0):string
+    //Функция определения правильного склонения суффиксов русского языка для чисел
+    function numberSuffix(
+            int     $number = 0,    // число, у которого необходимо определить правильный суффикс
+            string  $suffix1 = '',  // пример суффикса "мячик"
+            string  $suffix2 = '',  // пример суффикса "мячика"
+            string  $suffix3 = ''   // пример суффикса "мячиков"
+    ): string
     {
-        if (($hour == 1) || ($hour == 21)) {
-            $hours = 'час';
-        }
-        elseif ((($hour >= 2) && ($hour <= 4)) || (($hour >= 22) && ($hour <= 24))) {
-            $hours = 'часа';
-        }
-        else {
-            $hours = 'часов';
-        }
-        return $hours;
-    }
+        $remDiv10 = $number % 10;       // остаток от деления на 10
+        $remDiv100 = $number % 100;     // остаток от деления на 100
 
-    //Функция определения правильного склонения русского языка для минут
-    //Исходя из постановки задачи гарантированно корректно обрабатывает интервал от 0 до 60 минут
-    function decMinute($minute = 0):string
-    {
-        $remDiv = $minute % 10;
-        if (($remDiv == 1) && ($minute != 11)) {
-            $minutes = 'минута';
+        if ($remDiv100 > 10 && $remDiv100 < 20) {
+            return $suffix3;
+        } else if ($remDiv10 == 1) {
+            return $suffix1;
+        }   else if ($remDiv10 > 1 && $remDiv10 < 5) {
+            return $suffix2;
+        } else {
+            return $suffix3;
         }
-        elseif (($remDiv == 0) || (($remDiv >= 5) && ($remDiv <= 9)) || (($minute >= 11) && ($minute <= 14))) {
-            $minutes = 'минут';
-        }
-        else  {
-            $minutes = 'минуты';
-        }
-        return $minutes;
-    }
-
-    //Функция вычисляет текущее время и возвращает его в формате правильного склонения в строковую переменную
-    function rightTime():string
-    {
-        return date('G') . ' ' . decHour(date('G')) . ' ' . date('i') . ' ' . decMinute(date('i'));
     }
 
     date_default_timezone_set('Asia/Irkutsk');          // установка временной зоны
-    $strTime = rightTime();
+    $strTime = date('G') . ' ' . numberSuffix(date('G'), 'час', 'часа', 'часов') . ' ' .
+               date('i') . ' ' . numberSuffix(date('i'), 'минута', 'минуты', 'минут');
 ?>
 
 <html lang="ru">
