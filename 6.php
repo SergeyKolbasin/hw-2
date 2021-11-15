@@ -16,8 +16,13 @@
      */
     function power($val, $pow)
     {
+        /*
         if ($pow === 0) {
             return 1;
+        }
+        */
+        if ($pow == 1) {
+            return $val;
         }
         if ($pow < 0) {
             return power(1 / $val, -$pow);
