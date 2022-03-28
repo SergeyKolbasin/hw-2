@@ -1,33 +1,62 @@
 <?php
+/**
+ * Основные математические операции
+ * В адресной строке браузера можно вызвать: http://3.php?a=3&b=-7
+ */
     // Заголовки страницы
     $title = 'Математика';
     $h4 = 'Основные математические операции:';
-    // Аргументы для выполнения математических операций
-    $arg1 = 12;
-    $arg2 = 1.3;
-    // Функция сложения
+
+    // Получение значений аргументов из GET-запроса
+    $arg1 = $_GET['a'] ?? 0;
+    $arg2 = $_GET['b'] ?? 0;
+
+    /**
+     * Функция сложения двух аргументов
+     * @param   $arg1   number  аргумент мат.операции
+     * @param   $arg2   number  аргумент мат.операции
+     * @return          string  результат мат.операции
+     */
     function addFunction($arg1 = 0, $arg2 = 0)
     {
         return (string)($arg1 + $arg2);
     }
-    // Функция вычитания
+
+    /**
+     * Функция вычитания аргументов
+     * @param   $arg1   number  аргумент мат.операции
+     * @param   $arg2   number  аргумент мат.операции
+     * @return          string  результат мат.операции
+     */
     function subFunction($arg1 = 0, $arg2 = 0)
     {
         return (string)($arg1 - $arg2);
     }
-    // Функция умножения
+
+    /**
+     * Функция умножения аргументов
+     * @param   $arg1   number  аргумент мат.операции
+     * @param   $arg2   number  аргумент мат.операции
+     * @return          string  результат мат.операции
+     */
     function mulFunction($arg1 = 0, $arg2 = 0)
     {
         return (string)($arg1 * $arg2);
     }
-    // Функция деления
+
+    /**
+     * Функция деления аргументов
+     * @param   $arg1   number  аргумент мат.операции
+     * @param   $arg2   number  аргумент мат.операции
+     * @return          string  результат мат.операции
+     */
     function divFunction($arg1 = 0, $arg2 = 1)
-    {
-        if ($arg2 == 0) {
-            return (string)'ошибка, на 0 делить нельзя!';
+        {
+            if ($arg2 == 0) {
+                return (string)'ошибка, на 0 делить нельзя!';
+            }
+            return (string)($arg1 / $arg2);
         }
-        return (string)($arg1 / $arg2);
-    }
 ?>
 <html lang="ru">
 <head>
