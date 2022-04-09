@@ -17,7 +17,10 @@
      * @param   $arg2   number  аргумент мат.операции
      * @return          string  результат мат.операции
      */
-    function addFunction($arg1 = 0, $arg2 = 0)
+    function addFunction(
+            int $arg1 = 0,      //аргумент мат.операции
+            int $arg2 = 0       //аргумент мат.операции
+    )
     {
         return (string)($arg1 + $arg2);
     }
@@ -28,7 +31,10 @@
      * @param   $arg2   number  аргумент мат.операции
      * @return          string  результат мат.операции
      */
-    function subFunction($arg1 = 0, $arg2 = 0)
+    function subFunction(
+            int $arg1 = 0,      //аргумент мат.операции
+            int $arg2 = 0       //аргумент мат.операции
+    ): string
     {
         return (string)($arg1 - $arg2);
     }
@@ -39,7 +45,10 @@
      * @param   $arg2   number  аргумент мат.операции
      * @return          string  результат мат.операции
      */
-    function mulFunction($arg1 = 0, $arg2 = 0)
+    function mulFunction(
+            int $arg1 = 0,      //аргумент мат.операции
+            int $arg2 = 0       //аргумент мат.операции
+    )
     {
         return (string)($arg1 * $arg2);
     }
@@ -50,7 +59,10 @@
      * @param   $arg2   number  аргумент мат.операции
      * @return          string  результат мат.операции
      */
-    function divFunction($arg1 = 0, $arg2 = 1)
+    function divFunction(
+            int $arg1 = 0,      //аргумент мат.операции
+            int $arg2 = 1       //аргумент мат.операции
+    )
         {
             if ($arg2 == 0) {
                 return (string)'ошибка, на 0 делить нельзя!';

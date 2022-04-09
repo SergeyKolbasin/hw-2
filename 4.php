@@ -31,9 +31,9 @@
      * @return          string  результат мат.операции
      */
     function mathOperation(
-        $arg1 = 0,              // аргумент 1
-        $arg2 = 0,              // аргумент 2
-        $operation = ''         // математическая операция
+        int     $arg1 = 0,              // аргумент 1
+        int     $arg2 = 0,              // аргумент 2
+        string  $operation = ''         // математическая операция
     ):string
     {
         switch ($operation) {

@@ -11,9 +11,12 @@
      *
      * @param   $val    number  число, возводимое в степень
      * @param   $pow    number  степень числа
-     * Возвращает число $val, возведенное в степень &pow
+     * @return          number  возведенное в степень &pow
      */
-    function power($val, $pow)
+    function power(
+            float   $val,       // число, возводимое в степень
+            float   $pow        // степень числа
+    ): float
     {
         if ($pow == 0) {                        // степень = 0
             return 1;
